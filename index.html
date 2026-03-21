@@ -14,7 +14,7 @@
     }
 
     .container {
-      max-width: 850px;
+      max-width: 900px;
       margin: 60px auto;
       padding: 50px;
       background: white;
@@ -22,15 +22,30 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    .top-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
     }
 
-    h2 {
-      margin-top: 35px;
-      font-size: 1.3rem;
-      color: #333;
+    .text-content {
+      flex: 1;
+    }
+
+    .profile-photo {
+      width: 220px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
 
     p {
@@ -43,16 +58,6 @@
       font-weight: bold;
     }
 
-    .section {
-      margin-top: 30px;
-    }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
     a {
       color: #1a4d8f;
       text-decoration: none;
@@ -61,34 +66,61 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .profile-photo {
+        width: 200px;
+        height: 240px;
+      }
+
+      .text-content {
+        width: 100%;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Ana María Patrón Piñerez</h1>
+    <div class="top-section">
+      <div class="text-content">
+        <h1>Ana María Patrón Piñerez</h1>
 
-    <p>
-      Hello, I'm Ana! I am a Master’s student in Economics at <span class="highlight">Universidad de los Andes</span>.
-      My thesis studies how neural networks can be used to recover counterfactuals of Bayesian Nash equilibria in Electricity Markets.
-      More broadly, I am interested in applying mathematical methods to real-world problems.
-    </p>
+        <p>
+          Hello, I'm Ana. I am a Master’s student in Economics at
+          <span class="highlight">Universidad de los Andes</span>.
+          My thesis studies how neural networks can be used to recover counterfactuals of Bayesian Nash equilibria in electricity markets.
+          More broadly, I am interested in applying mathematical methods to real-world problems.
+        </p>
 
-    <p>
-      My research interests include causal inference, counterfactual estimation, missing data and selection bias,
-      machine learning, and econometrics.
-    </p>
+        <p>
+          My research interests include causal inference, counterfactual estimation, missing data and selection bias,
+          machine learning, and econometrics.
+        </p>
 
-    <p>
-      I have received the <span class="highlight">Mary Lister Fellowship</span> from Imperial College London
-      and the <span class="highlight">Globalink Research Award</span> from Mitacs to conduct summer research internships
-      in 2024 and 2025.
-    </p>
+        <p>
+          I have received the <span class="highlight">Mary Lister Fellowship</span> from Imperial College London
+          and the <span class="highlight">Globalink Research Award</span> from Mitacs to conduct summer research internships
+          in 2024 and 2025.
+        </p>
 
-    <p>
-      I hold a B.A. in Economics and a B.S. in Mathematics from Universidad de los Andes.
-      Currently, I work as a Senior Researcher  at <span class="highlight"> Quantil Applied Mathematics</span>,
-      where I use mathematical methods and machine learning to build predictive models and solve real-world industry problems.
-    </p>
+        <p>
+          I hold a B.A. in Economics and a B.S. in Mathematics from Universidad de los Andes.
+          Currently, I work as a Senior Researcher at <span class="highlight">Quantil Applied Mathematics</span>,
+          where I use mathematical methods and machine learning to build predictive models and solve real-world industry problems.
+        </p>
+      </div>
+
+      <img src="images/foto ana.jpeg" alt="Ana María Patrón Piñerez" class="profile-photo" />
+    </div>
   </div>
 </body>
 </html>
