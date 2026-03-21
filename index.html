@@ -3,63 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ana M Patrón Piñerez</title>
+  <title>Ana María Patrón Piñerez</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      background: #f7f7f7;
-      color: #222;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.75;
+      color: #2b2b2b;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(145, 92, 120, 0.10), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(108, 99, 132, 0.10), transparent 24%),
+        linear-gradient(135deg, #f7f3f1 0%, #f1ece8 45%, #f8f5f3 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.24) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.24) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 50px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 70px auto;
+      padding: 60px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(130, 94, 116, 0.12);
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(60, 40, 50, 0.08);
     }
 
     .top-section {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 30px;
+      gap: 42px;
     }
 
     .text-content {
       flex: 1;
+      min-width: 0;
     }
 
     .profile-photo {
-      width: 220px;
-      height: 260px;
+      width: 235px;
+      height: 285px;
       object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      border-radius: 18px;
+      border: 1px solid rgba(130, 94, 116, 0.18);
+      box-shadow: 0 14px 28px rgba(60, 40, 50, 0.12);
       flex-shrink: 0;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-top: 0;
-      margin-bottom: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      margin: 0 0 12px 0;
+      color: #342630;
+    }
+
+    .title-line {
+      width: 82px;
+      height: 2px;
+      background: linear-gradient(90deg, #8a5c74, #c8a1b0);
+      margin-bottom: 26px;
+      border-radius: 10px;
     }
 
     p {
       font-size: 1.05rem;
-      margin-bottom: 18px;
+      margin: 0 0 18px 0;
+      color: #3a3438;
     }
 
     .highlight {
-      color: #1a4d8f;
-      font-weight: bold;
+      color: #8a5c74;
+      font-weight: 600;
     }
 
     a {
-      color: #1a4d8f;
+      color: #8a5c74;
       text-decoration: none;
     }
 
@@ -68,14 +105,20 @@
     }
 
     @media (max-width: 768px) {
+      .container {
+        margin: 30px 16px;
+        padding: 32px 24px;
+      }
+
       .top-section {
         flex-direction: column-reverse;
         align-items: center;
+        gap: 28px;
       }
 
       .profile-photo {
-        width: 200px;
-        height: 240px;
+        width: 210px;
+        height: 255px;
       }
 
       .text-content {
@@ -84,6 +127,12 @@
 
       h1 {
         text-align: center;
+        font-size: 2.2rem;
+      }
+
+      .title-line {
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   </style>
@@ -93,29 +142,34 @@
     <div class="top-section">
       <div class="text-content">
         <h1>Ana María Patrón Piñerez</h1>
+        <div class="title-line"></div>
 
         <p>
-          Hello, I'm Ana! I am a Master’s student in Economics at
+          Hello, I’m Ana. I am a Master’s student in Economics at
           <span class="highlight">Universidad de los Andes</span>.
           My thesis studies how neural networks can be used to recover counterfactuals of Bayesian Nash equilibria in electricity markets.
-          More broadly, I am interested in applying mathematical methods to practical problems.
+          More broadly, I am interested in developing and applying mathematical methods to study public policy and societal problems.
         </p>
 
         <p>
           My research interests include causal inference, counterfactual estimation, missing data and selection bias,
           machine learning, and econometrics.
         </p>
-         <p>
-          I hold a B.A. in Economics and a B.S. in Mathematics from Universidad de los Andes. Currently, I work as a Senior Researcher at <span class="highlight">Quantil Applied Mathematics</span>, where I apply mathematical methods and machine learning to build predictive models and solve industry challenges.
+
+        <p>
+          I hold a B.A. in Economics and a B.S. in Mathematics from Universidad de los Andes.
+          Currently, I work as a Senior Researcher at <span class="highlight">Quantil Applied Mathematics</span>,
+          where I apply mathematical methods and machine learning to build predictive models and solve industry challenges.
         </p>
 
         <p>
-          My academic training in economics and mathematics has shaped my interest in quantitative methods and their application to real-world problems. Along this path, I was awarded the <span class="highlight">Mary Lister Fellowship</span> from Imperial College London and the <span class="highlight">Globalink Research Award</span> from Mitacs, which supported summer research internships in 2024 and 2025.
+          My academic training in economics and mathematics has shaped my interest in quantitative methods and their application to concrete problems.
+          Along this path, I was awarded the <span class="highlight">Mary Lister Fellowship</span> from Imperial College London
+          and the <span class="highlight">Globalink Research Award</span> from Mitacs, which supported summer research internships in 2024 and 2025.
         </p>
-
       </div>
 
-      <img src="images/foto ana.jpeg" alt="Ana María Patrón Piñerez" class="profile-photo" />
+      <img src="images/foto-ana.jpeg" alt="Ana María Patrón Piñerez" class="profile-photo" />
     </div>
   </div>
 </body>
