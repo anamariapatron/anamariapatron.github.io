@@ -1,6 +1,3 @@
-Index · HTML
-Copiar
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,28 +7,24 @@ Copiar
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
- 
+
   <style>
-    /* ─── TOKENS ────────────────────────────────────── */
     :root {
       --ink:        #1e1618;
       --ink-mid:    #4a3840;
       --ink-soft:   #7a6070;
       --rose:       #8a4f68;
       --rose-light: #c9a0b3;
-      --blush:      #f0e6eb;
       --cream:      #faf6f3;
       --white:      #ffffff;
       --border:     rgba(138, 79, 104, 0.13);
- 
       --f-display: "Cormorant Garamond", Georgia, serif;
       --f-body:    "DM Sans", system-ui, sans-serif;
     }
- 
-    /* ─── RESET ─────────────────────────────────────── */
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
- 
+
     body {
       font-family: var(--f-body);
       font-size: 15.5px;
@@ -40,8 +33,7 @@ Copiar
       background-color: var(--cream);
       overflow-x: hidden;
     }
- 
-    /* ─── NOISE TEXTURE ──────────────────────────────── */
+
     body::after {
       content: "";
       position: fixed;
@@ -51,26 +43,13 @@ Copiar
       opacity: 0.025;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
     }
- 
-    /* ─── DECORATIVE BG BLOBS ────────────────────────── */
-    .bg-orbs {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .bg-orbs span {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.22;
-    }
+
+    .bg-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .bg-orbs span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.22; }
     .bg-orbs .o1 { width: 500px; height: 500px; background: #d4a0bc; top: -120px; left: -100px; }
     .bg-orbs .o2 { width: 380px; height: 380px; background: #b8a8c8; bottom: 0; right: -80px; }
     .bg-orbs .o3 { width: 280px; height: 280px; background: #e8c8b8; top: 40%; left: 60%; }
- 
-    /* ─── LAYOUT ─────────────────────────────────────── */
+
     .page {
       position: relative;
       z-index: 1;
@@ -78,8 +57,8 @@ Copiar
       margin: 0 auto;
       padding: 80px 48px 120px;
     }
- 
-    /* ─── NAV ────────────────────────────────────────── */
+
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -94,7 +73,6 @@ Copiar
       border-bottom: 1px solid var(--border);
     }
     nav a {
-      font-family: var(--f-body);
       font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 1.3px;
@@ -104,8 +82,8 @@ Copiar
       transition: color 0.2s;
     }
     nav a:hover { color: var(--rose); }
- 
-    /* ─── HERO ───────────────────────────────────────── */
+
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1fr 260px;
@@ -114,20 +92,15 @@ Copiar
       padding-top: 48px;
       animation: fadeUp 0.9s ease both;
     }
- 
     .hero-text { padding-top: 8px; }
- 
     .hero-eyebrow {
-      font-family: var(--f-body);
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--rose);
       margin-bottom: 18px;
-      opacity: 0.9;
     }
- 
     h1 {
       font-family: var(--f-display);
       font-size: clamp(2.6rem, 5vw, 4rem);
@@ -135,32 +108,17 @@ Copiar
       letter-spacing: -0.5px;
       line-height: 1.1;
       color: var(--ink);
-      margin-bottom: 10px;
     }
-    h1 em {
-      font-style: italic;
-      color: var(--rose);
-    }
- 
+    h1 em { font-style: italic; color: var(--rose); }
     .hero-divider {
-      width: 56px;
-      height: 1.5px;
+      width: 56px; height: 1.5px;
       background: linear-gradient(90deg, var(--rose), transparent);
       margin: 28px 0;
     }
- 
-    .hero-lead {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--ink-mid);
-      max-width: 520px;
-    }
- 
-    /* ─── PHOTO ──────────────────────────────────────── */
-    .photo-wrap {
-      position: relative;
-      animation: fadeUp 0.9s 0.15s ease both;
-    }
+    .hero-lead { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); max-width: 520px; }
+
+    /* PHOTO */
+    .photo-wrap { position: relative; animation: fadeUp 0.9s 0.15s ease both; }
     .photo-wrap::before {
       content: "";
       position: absolute;
@@ -179,8 +137,8 @@ Copiar
       filter: grayscale(8%) contrast(1.02);
       box-shadow: 0 24px 52px rgba(80, 30, 50, 0.15);
     }
- 
-    /* ─── SECTION LABEL ──────────────────────────────── */
+
+    /* SECTION LABEL */
     .section-label {
       display: inline-flex;
       align-items: center;
@@ -195,24 +153,18 @@ Copiar
     .section-label::before {
       content: "";
       display: block;
-      width: 24px;
-      height: 1px;
+      width: 24px; height: 1px;
       background: var(--rose-light);
     }
- 
-    /* ─── SECTION ────────────────────────────────────── */
-    section {
-      margin-top: 88px;
-      animation: fadeUp 0.8s ease both;
-    }
- 
-    /* ─── RESEARCH INTERESTS ─────────────────────────── */
-    .interests-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
+
+    section { margin-top: 88px; animation: fadeUp 0.8s ease both; }
+    section:nth-child(2) { animation-delay: 0.05s; }
+    section:nth-child(3) { animation-delay: 0.10s; }
+    section:nth-child(4) { animation-delay: 0.15s; }
+    section:nth-child(5) { animation-delay: 0.20s; }
+
+    /* INTERESTS */
+    .interests-grid { display: flex; flex-wrap: wrap; gap: 10px; }
     .interest-tag {
       padding: 7px 16px;
       border-radius: 999px;
@@ -222,13 +174,9 @@ Copiar
       color: var(--ink-mid);
       transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-    .interest-tag:hover {
-      background: var(--rose);
-      color: var(--white);
-      border-color: var(--rose);
-    }
- 
-    /* ─── EXPERIENCE CARD ────────────────────────────── */
+    .interest-tag:hover { background: var(--rose); color: var(--white); border-color: var(--rose); }
+
+    /* TIMELINE CARD */
     .exp-card {
       display: flex;
       gap: 28px;
@@ -240,13 +188,9 @@ Copiar
       margin-bottom: 16px;
       transition: box-shadow 0.25s, transform 0.25s;
     }
-    .exp-card:hover {
-      box-shadow: 0 12px 32px rgba(80, 30, 50, 0.10);
-      transform: translateY(-2px);
-    }
+    .exp-card:hover { box-shadow: 0 12px 32px rgba(80, 30, 50, 0.10); transform: translateY(-2px); }
     .exp-dot {
-      width: 10px;
-      height: 10px;
+      width: 10px; height: 10px;
       border-radius: 50%;
       background: var(--rose-light);
       margin-top: 7px;
@@ -258,57 +202,58 @@ Copiar
       font-size: 1.18rem;
       font-weight: 500;
       color: var(--ink);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .exp-org {
       font-size: 0.83rem;
       color: var(--rose);
       font-weight: 500;
       letter-spacing: 0.3px;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+    }
+    .exp-fellowship {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-bottom: 10px;
     }
     .exp-desc {
       font-size: 0.93rem;
       color: var(--ink-soft);
       line-height: 1.65;
     }
- 
-    /* ─── AWARDS ─────────────────────────────────────── */
-    .award-list { display: flex; flex-direction: column; gap: 16px; }
-    .award-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 22px 28px;
-      background: rgba(255,255,255,0.60);
+
+    /* PROJECT / THESIS LINK PILL */
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 14px;
+      padding: 7px 15px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      transition: box-shadow 0.25s;
-    }
-    .award-item:hover { box-shadow: 0 8px 24px rgba(80, 30, 50, 0.09); }
-    .award-icon {
-      font-size: 1.3rem;
-      line-height: 1;
-      margin-top: 2px;
-    }
-    .award-name {
-      font-family: var(--f-display);
-      font-size: 1.08rem;
+      background: rgba(138, 79, 104, 0.05);
+      font-size: 0.79rem;
       font-weight: 500;
-      color: var(--ink);
+      color: var(--rose);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
-    .award-org {
-      font-size: 0.83rem;
-      color: var(--ink-soft);
-      margin-top: 2px;
+    .proj-link svg {
+      width: 13px; height: 13px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
     }
- 
-    /* ─── EDUCATION ──────────────────────────────────── */
-    .edu-row {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .proj-link:hover {
+      background: var(--rose);
+      color: var(--white);
+      border-color: var(--rose);
+      box-shadow: 0 4px 14px rgba(138, 79, 104, 0.25);
     }
+
+    /* EDUCATION */
+    .edu-row { display: flex; flex-direction: column; gap: 14px; }
     .edu-item {
       display: flex;
       align-items: center;
@@ -326,24 +271,11 @@ Copiar
       min-width: 70px;
       letter-spacing: 1px;
     }
-    .edu-name {
-      font-family: var(--f-display);
-      font-size: 1.1rem;
-      color: var(--ink);
-    }
-    .edu-school {
-      font-size: 0.83rem;
-      color: var(--ink-soft);
-      margin-top: 1px;
-    }
- 
-    /* ─── CONTACT ────────────────────────────────────── */
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 8px;
-    }
+    .edu-name { font-family: var(--f-display); font-size: 1.1rem; color: var(--ink); }
+    .edu-school { font-size: 0.83rem; color: var(--ink-soft); margin-top: 1px; }
+
+    /* CONTACT */
+    .contact-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
     .contact-link {
       display: inline-flex;
       align-items: center;
@@ -360,11 +292,8 @@ Copiar
     }
     .contact-link svg {
       width: 15px; height: 15px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      stroke: currentColor; fill: none;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
       flex-shrink: 0;
     }
     .contact-link:hover {
@@ -373,8 +302,8 @@ Copiar
       border-color: var(--rose);
       box-shadow: 0 6px 18px rgba(138, 79, 104, 0.28);
     }
- 
-    /* ─── FOOTER ─────────────────────────────────────── */
+
+    /* FOOTER */
     footer {
       margin-top: 100px;
       padding-top: 36px;
@@ -385,47 +314,21 @@ Copiar
       flex-wrap: wrap;
       gap: 12px;
     }
-    .footer-name {
-      font-family: var(--f-display);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--ink-soft);
-      font-style: italic;
-    }
-    .footer-copy {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-      opacity: 0.6;
-    }
- 
-    /* ─── ANIMATIONS ─────────────────────────────────── */
+    .footer-name { font-family: var(--f-display); font-size: 1rem; color: var(--ink-soft); font-style: italic; }
+    .footer-copy { font-size: 0.78rem; color: var(--ink-soft); opacity: 0.6; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
- 
-    section:nth-child(2) { animation-delay: 0.05s; }
-    section:nth-child(3) { animation-delay: 0.10s; }
-    section:nth-child(4) { animation-delay: 0.15s; }
-    section:nth-child(5) { animation-delay: 0.20s; }
-    section:nth-child(6) { animation-delay: 0.25s; }
- 
-    /* ─── RESPONSIVE ─────────────────────────────────── */
+
     @media (max-width: 780px) {
       .page { padding: 64px 24px 80px; }
       nav { padding: 18px 24px; gap: 20px; }
- 
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 36px;
-        padding-top: 32px;
-      }
-      .photo-wrap { max-width: 220px; margin: 0 auto; }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 32px; }
+      .photo-wrap { max-width: 220px; margin: 0 auto; order: 1; }
       .hero-text { order: 2; }
-      .photo-wrap { order: 1; }
- 
       h1 { font-size: 2.4rem; }
- 
       .exp-card { flex-direction: column; gap: 14px; }
       footer { flex-direction: column; text-align: center; }
     }
@@ -433,22 +336,18 @@ Copiar
 </head>
 <body>
   <div class="bg-orbs" aria-hidden="true">
-    <span class="o1"></span>
-    <span class="o2"></span>
-    <span class="o3"></span>
+    <span class="o1"></span><span class="o2"></span><span class="o3"></span>
   </div>
- 
-  <!-- NAV -->
+
   <nav>
     <a href="#research">Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#awards">Awards</a>
+    <a href="#timeline">Timeline</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
- 
+
   <div class="page">
- 
+
     <!-- HERO -->
     <div class="hero">
       <div class="hero-text">
@@ -467,7 +366,7 @@ Copiar
         <img src="images/foto-ana.jpeg" alt="Ana María Patrón Piñerez" />
       </div>
     </div>
- 
+
     <!-- RESEARCH INTERESTS -->
     <section id="research">
       <p class="section-label">Research Interests</p>
@@ -476,145 +375,126 @@ Copiar
         <span class="interest-tag">Counterfactual Estimation</span>
         <span class="interest-tag">Machine Learning</span>
         <span class="interest-tag">Econometrics</span>
-        <span class="interest-tag">Missing Data</span>
+        <span class="interest-tag">Missing Data &amp; Survey Sampling</span>
         <span class="interest-tag">Selection Bias</span>
-        <span class="interest-tag">Bayesian Nash Equilibria</span>
-        <span class="interest-tag">Electricity Markets</span>
-        <span class="interest-tag">Neural Networks</span>
+        <span class="interest-tag">Fairness</span>
+        <span class="interest-tag">Statistical Learning</span>
       </div>
     </section>
- 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <p class="section-label">Experience</p>
- 
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+      <p class="section-label">Timeline</p>
+
       <div class="exp-card">
         <div class="exp-dot"></div>
         <div class="exp-body">
           <div class="exp-title">Master's Student in Economics</div>
-          <div class="exp-org">Universidad de los Andes · 2024–Present</div>
+          <div class="exp-org">Universidad de los Andes · 2026</div>
           <div class="exp-desc">
             Thesis: Using neural networks to recover counterfactuals of Bayesian Nash equilibria
-            in electricity markets, bridging structural econometrics with modern deep learning.
+            in electricity markets.
           </div>
         </div>
       </div>
- 
+
       <div class="exp-card">
         <div class="exp-dot"></div>
         <div class="exp-body">
-          <div class="exp-title">Senior Researcher</div>
-          <div class="exp-org">Quantil Applied Mathematics · Current</div>
+          <div class="exp-title">Data Scientist</div>
+          <div class="exp-org">Quantil Applied Mathematics · 2023–Present</div>
           <div class="exp-desc">
             Applying mathematical methods and machine learning to build predictive models
             and address complex industry challenges across multiple sectors.
           </div>
         </div>
       </div>
- 
+
       <div class="exp-card">
         <div class="exp-dot"></div>
         <div class="exp-body">
-          <div class="exp-title">Summer Research Intern</div>
-          <div class="exp-org">Imperial College London · Summer 2024</div>
+          <div class="exp-title">Mary Lister Fellow</div>
+          <div class="exp-org">Imperial College London · Summer 2025</div>
+          <div class="exp-fellowship">Mary Lister McCammon Summer Research Fellowship</div>
           <div class="exp-desc">
-            Research internship supported by the Mary Lister Fellowship, conducting work
-            at the frontier of applied mathematics and economic modeling.
+            Research on dynamic survival modelling applied to credit default risk,
+            combining multilevel models with time-to-event analysis.
           </div>
+          <a class="proj-link"
+             href="https://github.com/anamariapatron/MLM-Dynamic-Survival-Modelling-of-Risk-Credit-Default"
+             target="_blank" rel="noopener">
+            <!-- GitHub icon -->
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            MLM Dynamic Survival Modelling of Credit Default Risk ↗
+          </a>
         </div>
       </div>
- 
+
       <div class="exp-card">
         <div class="exp-dot"></div>
         <div class="exp-body">
-          <div class="exp-title">Research Intern</div>
-          <div class="exp-org">Mitacs Globalink · Summer 2025</div>
+          <div class="exp-title">Mitacs intern</div>
+          <div class="exp-org">UQAM - Université du Québec à Montréal · Summer 2024</div>
+          <div class="exp-fellowship">Globalink Research Award</div>
           <div class="exp-desc">
-            International research internship supported by the Globalink Research Award,
-            focused on quantitative methods and applied research.
+            Studying fairness in Bayesian race predictions in the context of the insurance sector.
           </div>
         </div>
       </div>
-    </section>
- 
-    <!-- AWARDS -->
-    <section id="awards">
-      <p class="section-label">Honours &amp; Awards</p>
-      <div class="award-list">
-        <div class="award-item">
-          <div class="award-icon">✦</div>
-          <div>
-            <div class="award-name">Mary Lister Fellowship</div>
-            <div class="award-org">Imperial College London · 2024</div>
+
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div class="exp-body">
+          <div class="exp-title">B.S. in Mathematics</div>
+          <div class="exp-org">Universidad de los Andes · 2023</div>
+          <div class="exp-desc">
+            Thesis: Policy evaluation under Markovian noise using the online bootstrap inference algorithm.
           </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon">✦</div>
-          <div>
-            <div class="award-name">Globalink Research Award</div>
-            <div class="award-org">Mitacs · 2025</div>
-          </div>
+          <a class="proj-link"
+             href="https://hdl.handle.net/1992/68318"
+             target="_blank" rel="noopener">
+            <!-- Document icon -->
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Read Thesis ↗
+          </a>
         </div>
       </div>
-    </section>
- 
-    <!-- EDUCATION -->
-    <section id="education">
-      <p class="section-label">Education</p>
-      <div class="edu-row">
-        <div class="edu-item">
-          <div class="edu-year">M.A.</div>
-          <div>
-            <div class="edu-name">Economics</div>
-            <div class="edu-school">Universidad de los Andes · In Progress</div>
-          </div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-year">B.A.</div>
-          <div>
-            <div class="edu-name">Economics</div>
-            <div class="edu-school">Universidad de los Andes</div>
-          </div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-year">B.S.</div>
-          <div>
-            <div class="edu-name">Mathematics</div>
-            <div class="edu-school">Universidad de los Andes</div>
-          </div>
+
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div class="exp-body">
+          <div class="exp-title">B.A. in Economics</div>
+          <div class="exp-org">Universidad de los Andes · 2021</div>
         </div>
       </div>
+
+
     </section>
- 
+
     <!-- CONTACT -->
     <section id="contact">
       <p class="section-label">Get in Touch</p>
       <div class="contact-links">
- 
         <a class="contact-link" href="mailto:am.patron@uniandes.edu.co">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           Email
         </a>
- 
-        <a class="contact-link" href="https://github.com/" target="_blank" rel="noopener">
+        <a class="contact-link" href="https://github.com/anamariapatron" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           GitHub
         </a>
- 
-        <a class="contact-link" href="https://linkedin.com/" target="_blank" rel="noopener">
+        <a class="contact-link" href="https://linkedin.com/in/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
- 
       </div>
     </section>
- 
-    <!-- FOOTER -->
+
     <footer>
       <span class="footer-name">Ana María Patrón Piñerez</span>
-      <span class="footer-copy">&copy; 2025 · Bogotá, Colombia</span>
+      <span class="footer-copy">&copy; 2026 · Bogotá, Colombia</span>
     </footer>
- 
+
   </div>
 </body>
 </html>
